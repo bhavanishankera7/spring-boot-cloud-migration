@@ -1,0 +1,14 @@
+{
+  "cluster": "springboot-demo-cluster",
+  "serviceName": "springboot-demo-service",
+  "taskDefinition": "springboot-demo-task",
+  "desiredCount": 1,
+  "launchType": "FARGATE",
+  "networkConfiguration": {
+    "awsvpcConfiguration": {
+      "subnets": ["subnet-00f1d2a99d22a18ba"],
+      "securityGroups": ["sg-01685a44c4b8dcedf"],
+      "assignPublicIp": "ENABLED"
+    }
+  }
+} 

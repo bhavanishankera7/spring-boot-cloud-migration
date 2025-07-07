@@ -1,0 +1,29 @@
+{
+  "family": "springboot-demo-task",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "springboot-demo-container",
+      "image": "949908266807.dkr.ecr.us-east-1.amazonaws.com/springboot-demo:latest",
+      "portMappings": [
+        {
+          "containerPort": 8081,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/springboot-demo",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ]
+} 
